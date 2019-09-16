@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>调查问卷</title>
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximun-scale=1.0,initial-scale=1.0,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		
+	</head>
+	<body>
+		<div id ="app" v-cloak>
+			<questionpage :questions="questionsList" @submit="handleSubmit"></questionpage>
+		</div>
+		<script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.js"></script>
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<script src="js/questionPage.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/question.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/button.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script type="text/javascript">
+			var vm = new Vue({
+				el:"#app",
+				data:{
+					questionsList:[]
+				},
+				methods:{
+					handleSubmit(e){
+						console.log(e);
+						
+					},
+					getHomeInfo () {
+						
+			           axios.get('js/text.json')
+			                .then((res) => {
+			                	res = res.data
+			                	console.log(res)
+			                	if(res) {
+			                		this.questionsList = res.questionsList
+			                	}
+			                }).catch(error => console.log(error))
+			        }
+			       
+				},
+				 // mounted 编译好的html挂载到页面完成后执行的事件钩子，此钩子函数中一般会做一些ajax请求获取数据进行数据初始化
+				mounted () {
+			        this.getHomeInfo ()
+			    },
+				
+			})
+			
+			
+		</script>
+	</body>
+</html>

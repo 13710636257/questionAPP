@@ -1,0 +1,28 @@
+[v-cloak]{
+    display: none;
+}
+
+body,input,button,textarea,div{
+    margin:0;
+    padding:0;
+}
+#app{
+    margin:20px 15px;
+}
+
+button{
+	width: 95px;
+	height: 25px;
+    background-color: transparent;
+    outline: none;
+    border:1px solid #cccccc;
+    border-radius: 5px;
+    float: left;
+    margin:10px;
+}
+
+textarea{
+    width: 220px;
+    height: 45px;
+}
+

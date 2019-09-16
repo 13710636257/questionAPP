@@ -1,0 +1,22 @@
+{
+	"questionsList":[
+		{
+			"type":"radio",
+			"title":"请问您的性别是：",
+			"choices":["男","女","保密"],
+			"picked":""				
+		},
+		{
+			"type":"multi",
+			"title":"请选择您的兴趣爱好：",
+			"choices":["看书","看电影","听音乐","运动"],
+			"picked":""				
+		},
+		
+		{
+            "type": "typetext",
+            "title": "自我介绍",
+            "text": ""
+		}
+	]
+}
